@@ -1,21 +1,26 @@
+from datetime import datetime
+from decimal import Decimal
+
 from pydantic import BaseModel
 
 
 class Order(BaseModel):
     order_id: int
     nomenclature_id: int
-
-
-class CreateOrder(Order):
     amount: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
-class UpdateOrder(CreateOrder):
+class CreateOrder(Order):
+    created_at: datetime
+    price: Decimal
+
+
+class UpdateOrder(Order):
     pass
 
 
-class OrderOut(CreateOrder):
+class OrderOut(Order):
     pass

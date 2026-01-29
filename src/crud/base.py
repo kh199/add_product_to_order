@@ -6,9 +6,9 @@ from pydantic import BaseModel
 from sqlalchemy import Row, RowMapping, select
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.ext.asyncio import AsyncSession
-from src.tools.exceptions import ObjectNotFoundExceptionError
 
 from src.db.db import Base, async_session
+from src.tools.exceptions import ObjectNotFoundExceptionError
 
 ModelType = TypeVar("ModelType", bound=Base)
 CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)

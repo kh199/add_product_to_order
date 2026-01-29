@@ -22,9 +22,9 @@ class UserNotFoundExceptionError(CustomExceptionError):
 
 
 class ObjectNotFoundExceptionError(CustomExceptionError):
-    """Класс для исключений, если товар не найден."""
+    """Класс для исключений, если объект не найден."""
 
-    def __init__(self, message="Товар не найден"):
+    def __init__(self, message="Объект не найден"):
         super().__init__(message)
 
 
