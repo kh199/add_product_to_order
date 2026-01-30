@@ -11,7 +11,7 @@ services:
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 5s
-      timeout: 5ss
+      timeout: 5s
     networks:
       - web_network
 

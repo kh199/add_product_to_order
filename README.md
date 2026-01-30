@@ -25,13 +25,12 @@ docker-compose up -d
 Документация доступна по адресу ```http://127.0.0.1:8001/docs```
 
 
-## Методы API
+### Методы API
 
 + **POST**   ```orders/add_product``` добавление товара в заказ
 
 
-Схема БД
-#### Схема БД
+### Схема БД
 
 <img width="577" height="582" alt="Screenshot 2026-01-30 165948" src="https://github.com/user-attachments/assets/efd0f0fa-cf3f-4208-8fe8-ec932092dca9" />
 
