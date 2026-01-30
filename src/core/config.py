@@ -14,7 +14,7 @@ class AppSettings(BaseConfig):
     app_port: int
     app_log_level: str = "info"
     database_url: str = Field(
-        "postgresql+asyncpg://postgres:postgres@add_product_to_order:5432/postgres",
+        "postgresql+asyncpg://postgres:postgres@add_product_to_order_db:5432/postgres",
         env="DATABASE_URL",
     )
 

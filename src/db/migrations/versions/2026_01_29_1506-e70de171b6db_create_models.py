@@ -37,6 +37,9 @@ def upgrade() -> None:
         unique=False,
         postgresql_using="gist",
     )
+    op.execute(
+        "CREATE INDEX IF NOT EXISTS idx_category_nlevel ON category (nlevel(path));"
+    )
     op.create_table(
         "customer",
         sa.Column("name", sa.Text(), nullable=False, comment="Имя"),
@@ -154,5 +157,6 @@ def downgrade() -> None:
     op.drop_index("idx_customer_name", table_name="customer")
     op.drop_table("customer")
     op.drop_index("idx_categories_path", table_name="category", postgresql_using="gist")
+    op.drop_index("idx_category_nlevel", table_name="category")
     op.drop_table("category")
     # ### end Alembic commands ###

@@ -2,7 +2,6 @@ import asyncio
 from logging.config import fileConfig
 
 from alembic import context
-from alembic_utils.replaceable_entity import register_entities
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
@@ -18,8 +17,6 @@ from src.models.models import (
     ProductCategory,
 )
 
-# from src.models.view import report_view
-
 config = context.config
 
 if config.config_file_name is not None:
@@ -27,8 +24,6 @@ if config.config_file_name is not None:
 
 config.set_main_option("sqlalchemy.url", settings.database_url)
 target_metadata = Base.metadata
-
-# register_entities([report_view])
 
 
 def run_migrations_offline() -> None:
