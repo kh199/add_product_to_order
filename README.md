@@ -8,9 +8,9 @@
 ```SQLAlchemy```
 ```Docker```
 
-Схема БД
+#### Схема БД
 
-<img width="770" height="586" alt="Screenshot 2026-01-30 165948" src="https://github.com/user-attachments/assets/5fa5503c-8e13-4393-995d-0af5f1d6e308" />
+<img width="577" height="582" alt="Screenshot 2026-01-30 165948" src="https://github.com/user-attachments/assets/efd0f0fa-cf3f-4208-8fe8-ec932092dca9" />
 
 
 #### Получение информации о сумме товаров заказанных под каждого клиента (Наименование клиента, сумма):
