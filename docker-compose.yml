@@ -8,6 +8,10 @@ services:
     volumes:
       - add_product_to_order_postgres_data:/var/lib/postgres/data
     env_file: .env
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 5s
+      timeout: 5ss
     networks:
       - web_network
 
@@ -15,7 +19,8 @@ services:
     container_name: add_product_to_order_app
     build: .
     depends_on:
-        - add_product_to_order_db
+        add_product_to_order_db:
+            condition: service_healthy
     command: sh -c "uv run alembic upgrade head && uv run python main.py"
     env_file: .env
     ports:
